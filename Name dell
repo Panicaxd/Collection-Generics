@@ -1,0 +1,53 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Main {
+    public static Map<String, String> createMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("Антонов", "Егор");
+        map.put("Андреев", "Евгений");
+        map.put("Семачкин", "Миша");
+        map.put("Пушкин", "Александр");
+        map.put("Гурин", "Антон");
+        map.put("Фантазия", "Кончилась");
+        map.put("Давыденко", "Давид");
+        map.put("Ермоленко", "Леша");
+        map.put("Климович", "Антон");
+
+return map;
+    }
+
+    public static void removeTheFirstNameDuplicates(Map<String, String> map) {
+       Set<String> caseName = new HashSet<>();
+        Set<String> caseDoubleName = new HashSet<>();
+        for(Map.Entry<String, String> entry : map.entrySet()) {
+            String names = entry.getValue();
+            if (!caseName.add(names)) {
+                caseDoubleName.add(names);
+            }
+        }
+            for (String names : (caseDoubleName)){
+                map.remove(names);
+        }
+    }
+
+    
+
+    public static void removeItemFromMapByValue(Map<String, String> map, String value) {
+        Map<String, String> copy = new HashMap<>(map);
+        for (Map.Entry<String, String> pair : copy.entrySet()) {
+            if (pair.getValue().equals(value)) {
+                map.remove(pair.getKey());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Map<String, String> map = createMap();
+        removeTheFirstNameDuplicates(map);
+        
+        }
+
+}
