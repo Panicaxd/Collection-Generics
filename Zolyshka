@@ -1,13 +1,16 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Zolyshka {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Integer> MainList = new ArrayList<>();
         ArrayList<Integer> ThreeList = new ArrayList<>();
         ArrayList<Integer> TwoList = new ArrayList<>();
         ArrayList<Integer> OtherList = new ArrayList<>();
         for (int i = 1; i < 20; i++) {
-            MainList.add(sc.nextInt());
+            MainList.add(Integer.parseInt(br.readLine()));
         }
             for (Integer i : MainList) {
                 if (i % 3 == 0) {
