@@ -1,0 +1,21 @@
+import java.util.HashSet;
+
+
+public class Eat {
+    public static void main(String[] args) {
+        HashSet<String> eat = new HashSet<>();
+        eat.add("арбуз");
+        eat.add("банан");
+        eat.add("вишня");
+        eat.add("груша");
+        eat.add("дыня");
+        eat.add("ежевика");
+        eat.add("женьшень");
+        eat.add("земляника");
+        eat.add("ирис");
+        eat.add("картофель");
+        for (String text : eat) {
+            System.out.println(text);
+        }
+    }
+}
