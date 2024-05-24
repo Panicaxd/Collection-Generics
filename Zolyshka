@@ -1,0 +1,30 @@
+
+public class Zolyshka {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> MainList = new ArrayList<>();
+        ArrayList<Integer> ThreeList = new ArrayList<>();
+        ArrayList<Integer> TwoList = new ArrayList<>();
+        ArrayList<Integer> OtherList = new ArrayList<>();
+        for (int i = 1; i < 20; i++) {
+            MainList.add(sc.nextInt());
+        }
+            for (Integer i : MainList) {
+                if (i % 3 == 0) {
+                    ThreeList.add(i);
+                } else if (i % 2 == 0) {
+                    TwoList.add(i);
+                } else {
+                    OtherList.add(i);
+                }
+            }
+            System.out.println("Числа которые делятся на 2"); printList(TwoList);
+            System.out.println("Числа которые делятся на 3"); printList(ThreeList);
+            System.out.println("Другие"); printList(OtherList);
+    }
+        public static void printList(ArrayList<Integer> list) {
+            for (Integer num : list) {
+                System.out.println(num);
+            }
+        }
+    }
