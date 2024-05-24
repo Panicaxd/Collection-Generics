@@ -1,0 +1,53 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static Map<String, String> createMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("Антонов", "Егор");
+        map.put("Андреев", "Евгений");
+        map.put("Семачкин", "Миша");
+        map.put("Пушкин", "Александр");
+        map.put("Гурин", "Антон");
+        map.put("Фантазия", "Кончилась");
+        map.put("Давыденко", "Давид");
+        map.put("Ермоленко", "Леша");
+        map.put("Климович", "Антон");
+
+        return map;
+    }
+
+    public static int getCountTheSameFirstName(Map<String, String> map, String name) {
+        int count = 0;
+        for (String FirstName : map.values()) {
+            if (name.equals(FirstName)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static int getCountTheSameLastName(Map<String, String> map, String lastName) {
+        int count = 0;
+        for (String LastName : map.keySet()) {
+            if (lastName.equals(LastName)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+
+    public static void main(String[] args) {
+       Map<String, String> map = createMap();
+       String nameToChek = "Егор";
+       int countFirstName = getCountTheSameFirstName(map, nameToChek);
+       String lastNameToChek = "Антонов";
+       int countLastName = getCountTheSameLastName(map, lastNameToChek);
+
+
+    }
+}
